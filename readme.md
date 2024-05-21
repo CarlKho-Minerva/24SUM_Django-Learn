@@ -44,5 +44,8 @@ Make a table with a class in `models.py`.
 *view SQL executions*
 `py manage.py sqlmigrate members 0001` (refer to migrations for query number)
 
+----
 [Inserting data with Python shell](https://www.w3schools.com/django/django_insert_data.php)
 
+After all that, you create a template and add to `views.py`.
+----
