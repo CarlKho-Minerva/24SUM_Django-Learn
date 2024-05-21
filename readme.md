@@ -34,3 +34,15 @@ Routing.
 
 Templates
 Usually an html. To implement, return the html in `views.py`.Then tell Django members page exists vs settings py in `INSTALLED_APPS`.
+
+Models
+Make a table with a class in `models.py`.
+
+**After, manage.py:**
+-> makemigrations [foldername]
+-> migrate
+*view SQL executions*
+`py manage.py sqlmigrate members 0001` (refer to migrations for query number)
+
+[Inserting data with Python shell](https://www.w3schools.com/django/django_insert_data.php)
+
