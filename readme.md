@@ -1,4 +1,3 @@
-```markdown
 # 24SUM_Django-Learn
 Django follows the MVT design pattern (Model View Template).
 
