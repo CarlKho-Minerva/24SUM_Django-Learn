@@ -115,3 +115,9 @@ You can filter the search to only return specific rows/records, by using the `fi
 Django has its own way of specifying SQL statements and WHERE clauses.
 
 To make specific where clauses in Django, use "Field lookups".
+
+____
+**Collecting Static Files**
+
+Mostly for styling man. Since we did some changes in the static mystyles.css file, we have to run the collectstatic command to make the changes take effect:
+
