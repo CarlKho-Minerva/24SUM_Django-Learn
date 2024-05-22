@@ -48,4 +48,9 @@ Make a table with a class in `models.py`.
 [Inserting data with Python shell](https://www.w3schools.com/django/django_insert_data.php)
 
 After all that, you create a template and add to `views.py`.
+
 ----
+{% block name %} can be used to replace .html files with one `master.html`. Think of `sync content` with notion. End with {% endblock %}. Make sure to {% extend master.html %} to the html files you were thinking of replacing.
+
+----
+Django admin has built-in CRUD.
