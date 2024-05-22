@@ -43,3 +43,11 @@ def main(request):
 
 # loads the main.html template.
 # Outputs the HTML that is rendered by the template.
+
+
+def testing(request):
+  template = loader.get_template('template.html')
+  context = {
+    'fruits': ['Apple', 'Banana', 'Cherry']
+  }
+  return HttpResponse(template.render(context, request))
