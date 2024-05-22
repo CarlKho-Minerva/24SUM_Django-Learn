@@ -53,4 +53,52 @@ After all that, you create a template and add to `views.py`.
 {% block name %} can be used to replace .html files with one `master.html`. Think of `sync content` with notion. End with {% endblock %}. Make sure to {% extend master.html %} to the html files you were thinking of replacing.
 
 ----
-Django admin has built-in CRUD.
+Django admin has built-in CRUD. Make sure DEBUG=TRUE then head to `/admin`
+
+____
+### Syntax
+
+**Vars**
+You can create a variable in `views.py` via context. Or a variable in template with the `{%with var="content" %}` tag.
+
+Normally, most of the external data you want to use in a template, comes from a model. To get data from the Member model, we will have to import it in the views.py file, and extract data from it in the view:
+
+```python
+from django.http import HttpResponse, HttpResponseRedirect
+from django.template import loader
+from .models import Member
+
+def testing(request):
+  mymembers = Member.objects.all().values()
+  template = loader.get_template('template.html')
+  context = {
+    'mymembers': mymembers,
+  }
+  return HttpResponse(template.render(context, request))
+```
+
+Now we can use the data in the template
+```html
+<ul>
+  {% for x in mymembers %}
+    <li>{{ x.firstname }}</li>
+  {% endfor %}
+</ul>
+```
+
+On more programming logic with templates: [Template Tags](https://www.w3schools.com/django/django_template_tags.php)
+
+You can also just add external html files via
+
+Given
+`<div>HOME | {{ me }} | ABOUT | FORUM | {{ sponsor }}</div>`, you can add withs to use laid out vars:
+`{% include "mymenu.html" with me="TOBIAS" sponsor="W3SCHOOLS" %}`
+____
+
+When we fetch data from the model, it comes as a QuerySet object, with a similar format as the cars example above: a list with dictionaries.
+
+[How to deal with displaying data.](https://www.w3schools.com/django/showdjango.php?filename=demo_templates_for3)
+
+____
+
+### QuerySet
