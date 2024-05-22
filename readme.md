@@ -121,3 +121,13 @@ ____
 
 Mostly for styling man. Since we did some changes in the static mystyles.css file, we have to run the collectstatic command to make the changes take effect:
 
+____
+### AWS for DB / Deployment (Hosting)
+
+**DB**
+1. Database
+2. Create new POSTGRES
+3. Take a walk and update `settings.py`
+
+**Elastic Beanstalk**
+[Specific setup instructions](https://www.w3schools.com/django/django_deploy_config.php). Make sure to update WSGI path accordingly. zipping next step.
