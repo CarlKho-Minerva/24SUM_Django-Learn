@@ -34,3 +34,12 @@ def details(request, id):
 # Creates an object containing the member.
 # Sends the object to the template.
 # Outputs the HTML that is rendered by the template.
+
+def main(request):
+  template = loader.get_template('main.html')
+  return HttpResponse(template.render())
+
+# The main view does the following:
+
+# loads the main.html template.
+# Outputs the HTML that is rendered by the template.
