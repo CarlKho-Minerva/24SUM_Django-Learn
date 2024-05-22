@@ -88,7 +88,9 @@ Now we can use the data in the template
 
 On more programming logic with templates: [Template Tags](https://www.w3schools.com/django/django_template_tags.php)
 
-You can also just add external html files via
+> In Django templates, you typically use {{ }} to output variables or expressions. When you need to perform logic or control flow, you use {% %}.
+
+You can also just add external html files via include.
 
 Given
 `<div>HOME | {{ me }} | ABOUT | FORUM | {{ sponsor }}</div>`, you can add withs to use laid out vars:
@@ -102,3 +104,14 @@ When we fetch data from the model, it comes as a QuerySet object, with a similar
 ____
 
 ### QuerySet
+
+**Limit to a single column (flat):**
+`mydata = Member.objects.values_list('firstname', flat=True)`
+
+**Return Specific Rows**
+You can filter the search to only return specific rows/records, by using the `filter()` method.
+
+**Field Lookups [Reference](https://www.w3schools.com/django/django_queryset_filter.php))**
+Django has its own way of specifying SQL statements and WHERE clauses.
+
+To make specific where clauses in Django, use "Field lookups".

@@ -46,8 +46,10 @@ def main(request):
 
 
 def testing(request):
+  mydata = Member.objects.all()
+  # mydata = Member.objects.values_list('firstname', flat=True)
   template = loader.get_template('template.html')
   context = {
-    'fruits': ['Apple', 'Banana', 'Cherry']
+    'mymembers': mydata,
   }
   return HttpResponse(template.render(context, request))
