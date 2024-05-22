@@ -53,3 +53,7 @@ def testing(request):
     'mymembers': mydata,
   }
   return HttpResponse(template.render(context, request))
+
+def testingcss(request):
+  template = loader.get_template('template_css.html')
+  return HttpResponse(template.render())
